@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="{% url 'add' %}" method="post">
+        {% csrf_token %}
+        <label for="">First Name:</label>
+        <input type="text" name="f_name" id="">
+        <br>
+        <label for="">Last Name:</label>
+        <input type="text" name="l_name" id="">
+        <br>
+        <label for="">Username:</label>
+        <input type="text" name="u_name">
+        <br>
+        <label for="">Email:</label>
+        <input type="email" name="email">
+        <br>
+        <label for="">Password:</label>
+        <input type="password" name="e_pass" id="">
+        <br>
+        <label for="">Conform Password</label>
+        <input type="text" name="c_pass" id="">
+        <br>
+        <input type="submit" name="submit" value="submit">
+        {% for i in message %}
+        <h3>{{i}}</h3>
+        {% endfor %}
+    </form>
+</body>
+</html>
